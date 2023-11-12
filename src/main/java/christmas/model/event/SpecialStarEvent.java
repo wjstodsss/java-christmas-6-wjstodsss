@@ -1,4 +1,4 @@
-package christmas.model.discount;
+package christmas.model.event;
 
 public class SpecialStarEvent {
     public static final int SPECIAL_STAR_DISCOUNT = 1000;

@@ -1,10 +1,9 @@
-package christmas.model.discount;
+package christmas.model.event;
 
-import christmas.model.menu.Dessert;
 import christmas.model.menu.MainDish;
 import org.junit.jupiter.api.RepeatedTest;
 
-import static christmas.model.discount.MenuDiscountEvent.calculateMenuDiscount;
+import static christmas.model.event.MenuDiscountEvent.calculateMenuDiscount;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MainDishEventTest {

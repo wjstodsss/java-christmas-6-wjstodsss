@@ -1,6 +1,4 @@
-package christmas.model.discount;
-
-import java.time.LocalDate;
+package christmas.model.event;
 
 public class ChristmasDDay {
     private static final int DEFAULT_DISCOUNT = 1000;

@@ -11,7 +11,7 @@ import static christmas.util.Calculator.extractNumbers;
 
 public class PointOfSale {
 
-    public int calculateTotalOrderAmount(String input) {
+    public static int calculateTotalOrderAmount(String input) {
         ArrayList<Integer> orderMenuPrice = orderMenuPriceFinder(input);
         ArrayList<Integer> quantity = extractNumbers(input);
 
@@ -21,7 +21,7 @@ public class PointOfSale {
         }
         return totalAmount;
     }
-    public ArrayList<Integer> orderMenuPriceFinder(String input) {
+    public static ArrayList<Integer> orderMenuPriceFinder(String input) {
         Set<String> koreanWords = Calculator.extractWords(input);
         ArrayList<Integer> orderMenuPrice = new ArrayList<>();
         for (String koreanWord : koreanWords) {

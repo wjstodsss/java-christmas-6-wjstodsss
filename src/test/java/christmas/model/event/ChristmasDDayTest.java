@@ -1,9 +1,9 @@
-package christmas.model.discount;
+package christmas.model.event;
 
 import christmas.model.counter.PointOfSale;
 import org.junit.jupiter.api.Test;
 
-import static christmas.model.discount.ChristmasDDay.dDayDiscount;
+import static christmas.model.event.ChristmasDDay.dDayDiscount;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ChristmasDDayTest {
