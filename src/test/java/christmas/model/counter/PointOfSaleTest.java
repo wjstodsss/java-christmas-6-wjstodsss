@@ -1,13 +1,13 @@
-package christmas.model;
+package christmas.model.counter;
 
-import christmas.model.menu.Appetizer;
+import christmas.model.counter.PointOfSale;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class PointOfSaleTest {
     @Test
-    void 메뉴_이름_호출() {
+    void 총_주문_금액_확인() {
 
         String input = "티본스테이크-3,레드와인-2";
 

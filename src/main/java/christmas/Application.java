@@ -1,16 +1,5 @@
 package christmas;
 
-import christmas.model.PointOfSale;
-import christmas.model.menu.Appetizer;
-import christmas.model.menu.Beverage;
-import christmas.model.menu.MenuPriceMap;
-import christmas.util.Calculator;
-
-import java.time.DayOfWeek;
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.Set;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 

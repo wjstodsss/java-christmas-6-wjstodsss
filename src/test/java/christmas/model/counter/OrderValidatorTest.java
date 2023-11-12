@@ -1,17 +1,9 @@
-package christmas.model;
+package christmas.model.counter;
 
-import christmas.model.menu.Appetizer;
+import christmas.model.counter.OrderValidator;
 import christmas.model.menu.Beverage;
-import christmas.model.menu.Dessert;
-import christmas.model.menu.MainDish;
-import christmas.util.Calculator;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
-
-import static christmas.util.Calculator.extractNumbers;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderValidatorTest {

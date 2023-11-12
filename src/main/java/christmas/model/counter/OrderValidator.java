@@ -1,4 +1,4 @@
-package christmas.model;
+package christmas.model.counter;
 
 import christmas.model.menu.Appetizer;
 import christmas.model.menu.Beverage;
