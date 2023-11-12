@@ -3,6 +3,7 @@ package christmas.model.event;
 import christmas.model.counter.PointOfSale;
 import org.junit.jupiter.api.Test;
 
+import static christmas.model.counter.PointOfSale.calculateTotalOrderAmount;
 import static christmas.model.event.ChristmasDDay.dDayDiscount;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -12,9 +13,8 @@ class ChristmasDDayTest {
 
         String inputOrder = "티본스테이크-3,레드와인-2";
         String inputDay = "19";
-        PointOfSale pointOfSale = new PointOfSale();
 
-        int totalPayment = pointOfSale.calculateTotalOrderAmount(inputOrder) - dDayDiscount(inputDay);
+        int totalPayment = calculateTotalOrderAmount(inputOrder) - dDayDiscount(inputDay);
 
         assertEquals(282200, totalPayment);
     }
