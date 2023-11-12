@@ -1,6 +1,8 @@
 package christmas.util;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -21,7 +23,7 @@ public class Calculator {
 
     private static Set<String> processMatches(String input, String regex) {
         Matcher matcher = createMatcher(input, regex);
-        Set<String> matches = new HashSet<>();
+        Set<String> matches = new LinkedHashSet<>();
         while (matcher.find()) {
             matches.add(matcher.group());
         }
@@ -38,5 +40,18 @@ public class Calculator {
 
     private static int parseToInt(String str) {
         return Integer.parseInt(str);
+    }
+
+    public static ArrayList<Integer> extractNumbers(String input) {
+        Matcher numberMatcher = createMatcher(input, "\\d+");
+        return getNumbers(numberMatcher);
+    }
+
+    private static ArrayList<Integer> getNumbers(Matcher matcher) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        while (matcher.find()) {
+            numbers.add(parseToInt(matcher.group()));
+        }
+        return numbers;
     }
 }

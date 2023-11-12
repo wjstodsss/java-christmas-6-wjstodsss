@@ -16,11 +16,4 @@ class MenuTest {
         assertEquals("티본스테이크", MainDish.T_BONE_STEAK.getItemName());
     }
 
-    @Test
-    void 주문_금액_호출() {
-        assertEquals(0, Appetizer.MUSHROOM_SOUP.orderAmount());
-        assertEquals(0, Beverage.ZERO_COLA.orderAmount());
-        assertEquals(0, Dessert.CHOCO_CAKE.orderAmount());
-        assertEquals(0, MainDish.T_BONE_STEAK.orderAmount());
-    }
 }

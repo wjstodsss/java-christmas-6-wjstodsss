@@ -1,18 +1,16 @@
 package christmas.model.menu;
 
-public enum Appetizer implements MenuItem{
-    MUSHROOM_SOUP("양송이수프", 6_000, 0),
-    TAPAS("타파스", 5_500, 0),
-    CAESAR_SALAD("시저샐러드", 8_000, 0);
+public enum Appetizer implements MenuItem {
+    MUSHROOM_SOUP("양송이수프", 6_000),
+    TAPAS("타파스", 5_500),
+    CAESAR_SALAD("시저샐러드", 8_000);
 
     private final String itemName;
     private final int price;
-    private final int quantity;
 
-    Appetizer(String itemName, int price, int quantity) {
+    Appetizer(String itemName, int price) {
         this.itemName = itemName;
         this.price = price;
-        this.quantity = quantity;
     }
 
     @Override
@@ -21,7 +19,7 @@ public enum Appetizer implements MenuItem{
     }
 
     @Override
-    public int orderAmount() {
-        return price*quantity;
+    public int getPrice() {
+        return price;
     }
 }

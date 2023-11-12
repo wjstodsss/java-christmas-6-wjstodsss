@@ -1,18 +1,16 @@
 package christmas.model.menu;
 
-public enum Beverage implements MenuItem {
-    ZERO_COLA("제로콜라", 3000, 0),
-    RED_WINE("레드와인", 60000, 0),
-    CHAMPAGNE("샴페인", 25000, 0);
+public enum Beverage implements MenuItem{
+    ZERO_COLA("제로콜라", 3000),
+    RED_WINE("레드와인", 60000),
+    CHAMPAGNE("샴페인", 25000);
 
     private final String itemName;
     private final int price;
-    private final int quantity;
 
-    Beverage(String itemName, int price, int quantity) {
+    Beverage(String itemName, int price) {
         this.itemName = itemName;
         this.price = price;
-        this.quantity = quantity;
     }
 
     @Override
@@ -21,8 +19,7 @@ public enum Beverage implements MenuItem {
     }
 
     @Override
-    public int orderAmount() {
-        return price*quantity;
+    public int getPrice() {
+        return price;
     }
-
 }
