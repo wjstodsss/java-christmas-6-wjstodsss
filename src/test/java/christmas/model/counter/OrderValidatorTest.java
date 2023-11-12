@@ -13,10 +13,9 @@ class OrderValidatorTest {
         String input = "제로콜라-1";
 
         OrderValidator orderValidator = new OrderValidator();
-        Beverage beverages = Beverage.RED_WINE;
 
         assertThrows(IllegalArgumentException.class, () -> {
-            orderValidator.isNotOnlyBeveragesOrdered(input, beverages);
+            orderValidator.isNotOnlyBeveragesOrdered(input);
         });
 
     }

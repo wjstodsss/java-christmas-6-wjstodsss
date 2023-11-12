@@ -12,10 +12,11 @@ import java.util.Set;
 
 public class OrderValidator {
     private final int MAX_ORDER_NUMBER = 20;
-    public void isNotOnlyBeveragesOrdered(String input, Beverage beverages) {
+    public void isNotOnlyBeveragesOrdered(String input) {
+        Beverage myBeverage = Beverage.RED_WINE;
         ArrayList<String> beverageNames = new ArrayList<>();
 
-        for (Beverage beverage : beverages.values()) {
+        for (Beverage beverage : myBeverage.values()) {
             beverageNames.add(beverage.getItemName());
         }
 

@@ -11,8 +11,6 @@ import static christmas.util.Calculator.extractNumbers;
 
 public class PointOfSale {
 
-
-
     public int calculateTotalOrderAmount(String input) {
         ArrayList<Integer> orderMenuPrice = orderMenuPriceFinder(input);
         ArrayList<Integer> quantity = extractNumbers(input);
