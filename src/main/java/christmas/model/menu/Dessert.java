@@ -1,6 +1,6 @@
 package christmas.model.menu;
 
-public enum Dessert {
+public enum Dessert implements MenuItem {
     CHOCO_CAKE("초코케이크", 15000, 0),
     ICE_CREAM("아이스크림", 5000, 0);
 
@@ -14,4 +14,13 @@ public enum Dessert {
         this.quantity = quantity;
     }
 
+    @Override
+    public String getItemName() {
+        return itemName;
+    }
+
+    @Override
+    public int orderAmount() {
+        return price*quantity;
+    }
 }

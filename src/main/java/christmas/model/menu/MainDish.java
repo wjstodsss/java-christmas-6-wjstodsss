@@ -1,6 +1,6 @@
 package christmas.model.menu;
 
-public enum MainDish {
+public enum MainDish implements MenuItem {
     T_BONE_STEAK("티본스테이크", 55000, 0),
     BBQ_RIBS("바비큐립", 54000, 0),
     SEAFOOD_PASTA("해산물파스타", 35000, 0),
@@ -15,4 +15,16 @@ public enum MainDish {
         this.price = price;
         this.quantity = quantity;
     }
+
+    @Override
+    public String getItemName() {
+        return itemName;
+    }
+
+    @Override
+    public int orderAmount() {
+        return price*quantity;
+    }
+
+
 }

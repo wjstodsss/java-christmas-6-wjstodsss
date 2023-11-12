@@ -1,6 +1,6 @@
 package christmas.model.menu;
 
-public enum Appetizer {
+public enum Appetizer implements MenuItem{
     MUSHROOM_SOUP("양송이수프", 6_000, 0),
     TAPAS("타파스", 5_500, 0),
     CAESAR_SALAD("시저샐러드", 8_000, 0);
@@ -13,5 +13,15 @@ public enum Appetizer {
         this.itemName = itemName;
         this.price = price;
         this.quantity = quantity;
+    }
+
+    @Override
+    public String getItemName() {
+        return itemName;
+    }
+
+    @Override
+    public int orderAmount() {
+        return price*quantity;
     }
 }
