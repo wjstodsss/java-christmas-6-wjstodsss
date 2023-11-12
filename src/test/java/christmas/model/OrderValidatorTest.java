@@ -29,4 +29,14 @@ class OrderValidatorTest {
 
     }
 
+    @Test
+    public void 주문한_메뉴의_수가_20을_초과하는_경우() {
+        String input = "제로콜라-21";
+
+        OrderValidator orderValidator = new OrderValidator();
+
+        assertThrows(IllegalArgumentException.class, () -> {
+            orderValidator.isExceededMaxOrderQuantity(input);
+        });
+    }
 }

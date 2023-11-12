@@ -11,6 +11,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class OrderValidator {
+    private final int MAX_ORDER_NUMBER = 20;
     public void isNotOnlyBeveragesOrdered(String input, Beverage beverages) {
         ArrayList<String> beverageNames = new ArrayList<>();
 
@@ -24,7 +25,15 @@ public class OrderValidator {
         int addKoreanWordsSize = koreanWords.size();
         System.out.println(addKoreanWordsSize);
         if(beverageNames.size() >= addKoreanWordsSize) {
-            throw new IllegalArgumentException("[ERROR]");
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
+        }
+    }
+
+    public void isExceededMaxOrderQuantity(String input){
+        int totalOrderCount = Calculator.calculateSumOfMatches(input);
+
+        if (totalOrderCount > MAX_ORDER_NUMBER) {
+            throw new IllegalArgumentException("[ERROR] 유효하지 않은 주문입니다. 다시 입력해 주세요.");
         }
     }
 }
