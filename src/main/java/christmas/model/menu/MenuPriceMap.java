@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MenuPriceMap {
-    private static final Map<String, Integer> menuPrices = new HashMap<>();
+    public static final Map<String, Integer> menuPrices = new HashMap<>();
 
     static {
 
