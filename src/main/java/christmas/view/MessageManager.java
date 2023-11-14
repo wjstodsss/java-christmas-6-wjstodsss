@@ -1,4 +1,4 @@
-package christmas.util;
+package christmas.view;
 
 import java.util.ResourceBundle;
 
@@ -33,6 +33,10 @@ public class MessageManager {
 
     public static void getPrintBenefitsDetails() {
         System.out.println(messages.getString("printBenefitsDetails.message"));
+    }
+
+    public static void getPrintTotalBenefitsAmount() {
+        System.out.println(messages.getString("printTotalBenefitsAmount.message"));
     }
 
     //Exception Messages

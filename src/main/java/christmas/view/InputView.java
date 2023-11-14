@@ -1,7 +1,7 @@
 package christmas.view;
 
-import static christmas.util.MessageManager.getDatePromptMessage;
-import static christmas.util.MessageManager.getMenuAndQuantityPromptMessage;
+import static christmas.view.MessageManager.getDatePromptMessage;
+import static christmas.view.MessageManager.getMenuAndQuantityPromptMessage;
 import static christmas.view.InputValidator.*;
 
 import camp.nextstep.edu.missionutils.Console;

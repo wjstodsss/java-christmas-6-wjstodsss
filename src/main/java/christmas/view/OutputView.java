@@ -1,29 +1,18 @@
 package christmas.view;
 
-import static christmas.util.MessageManager.*;
+import static christmas.view.MessageManager.*;
 
 public class OutputView {
     public void printBoundaryEmptyLine() {
         System.out.println();
     }
 
-    public void printOrderMenu() {
-        printBoundaryEmptyLine();
-        getPrintOrderMenu();
-    }
-
     public void printOrderMenuFormat(String item, int quantity) {
         System.out.println(item + " " + quantity + "개");
     }
 
-    public void printTotalAmountAndFormat(int totalAmount) {
-        getPrintTotalOrderAmount();
-
+    public void printTotalAmountFormat(int totalAmount) {
         System.out.printf("%,d원\n", totalAmount);
-    }
-
-    public void printFreeAward() {
-        getPrintFreeAward();
     }
 
     public void printFreeAwardFormat(String item) {
@@ -32,10 +21,6 @@ public class OutputView {
 
     public void printNothing() {
         System.out.println("없음");
-    }
-
-    public void printBenefitsDetails() {
-        getPrintBenefitsDetails();
     }
 
     public void printDDayDiscount(int discountAmount) {
@@ -57,4 +42,5 @@ public class OutputView {
     public void printAwardEvent(int itemPrice) {
         System.out.printf("증정 이벤트: -%,d원\n", itemPrice);
     }
+
 }

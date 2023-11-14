@@ -3,7 +3,7 @@ package christmas.view;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static christmas.util.MessageManager.*;
+import static christmas.view.MessageManager.*;
 
 public class InputValidator {
 
