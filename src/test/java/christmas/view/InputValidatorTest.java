@@ -21,4 +21,11 @@ class InputValidatorTest {
             InputValidator.validateInputRange("0");
         });
     }
+
+    @Test
+    void 입력_검증_포멧이_다른_경우() {
+        assertThrows(IllegalArgumentException.class, () -> {
+            InputValidator.validateInputMenuAndQuantity("ABCDE-1");
+        });
+    }
 }

@@ -15,6 +15,10 @@ public class MessageManager {
         System.out.println(messages.getString("programClosePromopt.message"));
     }
 
+    public static void getMenuAndQuantityPromptMessage() {
+        System.out.println(messages.getString("menuAndQuantityPrompt.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
@@ -23,5 +27,6 @@ public class MessageManager {
     public static String getValidateInputRange() {
         return exceptionMessages.getString("validateInputRange.message");
     }
+    public static String getValidateInputMenuAndQuantity() {return exceptionMessages.getString("validateInputMenuAndQuantity.message");}
 
 }

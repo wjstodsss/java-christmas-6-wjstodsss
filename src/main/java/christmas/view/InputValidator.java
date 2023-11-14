@@ -1,5 +1,8 @@
 package christmas.view;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import static christmas.util.MessageManager.*;
 
 public class InputValidator {
@@ -25,4 +28,19 @@ public class InputValidator {
             throw new IllegalArgumentException(getValidateInputRange());
         }
     }
+
+    public static void validateInputMenuAndQuantity(String input) {
+        if (!isInputMenuAndQuantityFormat(input)) {
+            throw new IllegalArgumentException(getValidateInputMenuAndQuantity());
+        }
+    }
+    public static boolean isInputMenuAndQuantityFormat(String input) {
+        String pattern = "^[가-힣]+-\\d+(,[가-힣]+-\\d+)*$";
+
+        Pattern regex = Pattern.compile(pattern);
+        Matcher matcher = regex.matcher(input);
+        return matcher.matches();
+    }
+
+
 }
