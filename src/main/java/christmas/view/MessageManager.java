@@ -55,6 +55,27 @@ public class MessageManager {
     public static String getValidateInputRange() {
         return exceptionMessages.getString("validateInputRange.message");
     }
+
     public static String getValidateInputMenuAndQuantity() {return exceptionMessages.getString("validateInputMenuAndQuantity.message");}
 
+    public static String getValidateContainsItem() {
+        return exceptionMessages.getString("validateContainsItem.message");
+    }
+
+    public static String getValidateOrderQuantityMinimum() {
+        return exceptionMessages.getString("validateOrderQuantityMinimum.message");
+    }
+
+    public static String getValidateDuplicateMenu() {
+        return exceptionMessages.getString("validateDuplicateMenu.message");
+    }
+
+
+    public static String getNotOnlyBeveragesOrdered() {
+        return exceptionMessages.getString("notOnlyBeveragesOrdered.message");
+    }
+
+    public static String getExceededMaxOrderQuantity() {
+        return exceptionMessages.getString("exceededMaxOrderQuantity.message");
+    }
 }

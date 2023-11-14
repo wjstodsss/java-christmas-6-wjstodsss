@@ -1,9 +1,6 @@
 package christmas.model.event;
 
-import christmas.model.counter.PointOfSale;
 import christmas.model.menu.Beverage;
-
-import static christmas.model.counter.PointOfSale.calculateTotalOrderAmount;
 
 public class FreeChampagneEvent {
     private static final int REWARD_THRESHOLD_AMOUNT = 120000;

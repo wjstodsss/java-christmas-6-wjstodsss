@@ -15,7 +15,7 @@ class OrderValidatorTest {
         OrderValidator orderValidator = new OrderValidator();
 
         assertThrows(IllegalArgumentException.class, () -> {
-            orderValidator.isNotOnlyBeveragesOrdered(input);
+            orderValidator.orderValidatorBundle(input);
         });
 
     }
@@ -27,7 +27,7 @@ class OrderValidatorTest {
         OrderValidator orderValidator = new OrderValidator();
 
         assertThrows(IllegalArgumentException.class, () -> {
-            orderValidator.isExceededMaxOrderQuantity(input);
+            orderValidator.orderValidatorBundle(input);
         });
     }
 }

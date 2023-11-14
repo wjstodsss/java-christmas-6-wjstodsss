@@ -7,8 +7,9 @@ import static christmas.view.MessageManager.*;
 
 public class InputValidator {
 
-    public static final int MIN_VALUE = 1;
-    public static final int MAX_VALUE = 31;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 31;
+
     public static void validateDate(String inputDate) {
         validateNonInteger(inputDate);
         validateInputRange(inputDate);
