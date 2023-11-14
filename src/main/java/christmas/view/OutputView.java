@@ -43,4 +43,8 @@ public class OutputView {
         System.out.printf("증정 이벤트: -%,d원\n", itemPrice);
     }
 
+    public void printTotalDiscountAmountFormat(int totalAmount) {
+        System.out.printf("-%,d원\n", totalAmount);
+    }
+
 }
