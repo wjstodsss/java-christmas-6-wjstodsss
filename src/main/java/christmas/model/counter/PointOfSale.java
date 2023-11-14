@@ -22,10 +22,10 @@ public class PointOfSale {
         return totalAmount;
     }
     public ArrayList<Integer> orderMenuPriceFinder(String input) {
-        Set<String> koreanWords = itemsSet(input);
+        Set<String> itemsSet = itemsSet(input);
         ArrayList<Integer> orderMenuPrice = new ArrayList<>();
-        for (String koreanWord : koreanWords) {
-            orderMenuPrice.add(MenuPriceMap.getPriceByName(koreanWord));
+        for (String item : itemsSet) {
+            orderMenuPrice.add(MenuPriceMap.getPriceByName(item));
         }
         return orderMenuPrice;
     }

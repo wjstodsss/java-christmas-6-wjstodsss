@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
+import static christmas.model.counter.PointOfSale.itemsSet;
+import static christmas.model.counter.PointOfSale.quantitiesList;
 import static christmas.view.MessageManager.getPrintOrderMenu;
 
 public class AppIODataController {
@@ -17,8 +19,8 @@ public class AppIODataController {
     private  String inputOrder;
     private InputView inputView = new InputView();
     private OutputView outputView = new OutputView();
-    private PointOfSale pointOfSale = new PointOfSale();
     private OrderValidator orderValidator = new OrderValidator();
+    private PointOfSale pointOfSale = new PointOfSale();
 
 
 
@@ -27,6 +29,7 @@ public class AppIODataController {
         this.inputOrder = inputView.readMenuAndQuantity();
         inputOrder = validateInputOrderLoop(inputOrder);
         printOrderMenu(inputOrder);
+        outputView.printTotalAmountFormat(pointOfSale.calculateTotalOrderAmount(inputOrder));
     }
 
     private String validateInputOrderLoop(String inputOrder) {
@@ -52,8 +55,8 @@ public class AppIODataController {
         outputView.printBoundaryEmptyLine();
         getPrintOrderMenu();
 
-        Iterator<String> itemsIterator = pointOfSale.itemsSet(inputOrder).iterator();
-        Iterator<Integer> quantitiesIterator = pointOfSale.quantitiesList(inputOrder).iterator();
+        Iterator<String> itemsIterator = itemsSet(inputOrder).iterator();
+        Iterator<Integer> quantitiesIterator = quantitiesList(inputOrder).iterator();
 
         while (itemsIterator.hasNext() && quantitiesIterator.hasNext()) {
             String item = itemsIterator.next();
