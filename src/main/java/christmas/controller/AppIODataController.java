@@ -6,13 +6,14 @@ import christmas.model.counter.PointOfSale;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Set;
 
 import static christmas.model.counter.PointOfSale.itemsSet;
 import static christmas.model.counter.PointOfSale.quantitiesList;
-import static christmas.view.MessageManager.getPrintOrderMenu;
+import static christmas.model.event.FreeChampagneEvent.freeChampane;
+import static christmas.model.event.FreeChampagneEvent.validateFreeChampagne;
+import static christmas.view.MessageManager.*;
+
 
 public class AppIODataController {
     private String inputDate;
@@ -27,9 +28,23 @@ public class AppIODataController {
     public AppIODataController() {
         this.inputDate = inputView.readDate();
         this.inputOrder = inputView.readMenuAndQuantity();
-        inputOrder = validateInputOrderLoop(inputOrder);
+        outputView.printBenefitsPreview(inputDate);
         printOrderMenu(inputOrder);
-        outputView.printTotalAmountFormat(pointOfSale.calculateTotalOrderAmount(inputOrder));
+        inputOrder = validateInputOrderLoop(inputOrder);
+        int totalAmount = pointOfSale.calculateTotalOrderAmount(inputOrder);
+        totalAmountView(totalAmount);
+        freeAwardView(totalAmount);
+    }
+
+    private void totalAmountView(int totalAmount) {
+        outputView.printBoundaryEmptyLine();
+        getPrintTotalOrderAmount();
+        outputView.printTotalAmountFormat(totalAmount);
+    }
+    private void freeAwardView(int totalAmount){
+        outputView.printBoundaryEmptyLine();
+        getPrintFreeAward();
+        outputView.printFreeAwardFormat(freeChampagneEvent(totalAmount));
     }
 
     private String validateInputOrderLoop(String inputOrder) {
@@ -64,5 +79,12 @@ public class AppIODataController {
 
             outputView.printOrderMenuFormat(item, quantity);
         }
+    }
+
+    private String freeChampagneEvent(int totalAmount) {
+        if (validateFreeChampagne(totalAmount)) {
+           return freeChampane() + " 1개";
+        }
+       return "없음";
     }
 }

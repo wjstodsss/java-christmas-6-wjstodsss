@@ -1,7 +1,5 @@
 package christmas.view;
 
-import static christmas.view.MessageManager.*;
-
 public class OutputView {
     public void printBoundaryEmptyLine() {
         System.out.println();
@@ -16,11 +14,11 @@ public class OutputView {
     }
 
     public void printFreeAwardFormat(String item) {
-        System.out.println(item + " 1개");
+        System.out.println(item);
     }
 
-    public void printNothing() {
-        System.out.println("없음");
+    public void printBenefitsPreview(String input) {
+        System.out.printf("12월 %s일에 우테코 식당에서 받을 이벤트 혜택 미리 보기!\n",input);
     }
 
     public void printDDayDiscount(int discountAmount) {
