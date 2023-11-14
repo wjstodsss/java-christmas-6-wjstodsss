@@ -1,21 +1,22 @@
 package christmas.view;
 
-import static christmas.util.MessageManager.*;
+import static christmas.util.MessageManager.getDatePromptMessage;
+import static christmas.util.MessageManager.getMenuAndQuantityPromptMessage;
 import static christmas.view.InputValidator.*;
 
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
 
-    public void readDate() {
+    public String readDate() {
         getDatePromptMessage();
-        String inputDate = Console.readLine();
-        readDateloop(inputDate);
+        return readDateloop();
     }
 
-    private void readDateloop(String inputDate) {
+    private String readDateloop() {
         int attempts = 0;
         int maxAttempts = 3;
+        String inputDate = Console.readLine();
 
         while (attempts < maxAttempts) {
             try {
@@ -27,17 +28,18 @@ public class InputView {
                 attempts++;
             }
         }
+        return  inputDate;
     }
 
-    public void readMenuAndQuantity() {
+    public String readMenuAndQuantity() {
         getMenuAndQuantityPromptMessage();
-        String inputMenuAndQuantity = Console.readLine();
-        readMenuAndQuantityLoop(inputMenuAndQuantity);
+        return readMenuAndQuantityLoop();
     }
 
-    private void readMenuAndQuantityLoop(String inputMenuAndQuantity) {
+    private String readMenuAndQuantityLoop() {
         int attempts = 0;
         int maxAttempts = 3;
+        String inputMenuAndQuantity = Console.readLine();
 
         while (attempts < maxAttempts) {
             try {
@@ -49,5 +51,6 @@ public class InputView {
                 attempts++;
             }
         }
+        return inputMenuAndQuantity;
     }
 }
