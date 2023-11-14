@@ -23,6 +23,10 @@ public class MessageManager {
         System.out.println(messages.getString("printOrderMenu.message"));
     }
 
+    public static void getPrintTotalOrderAmount() {
+        System.out.println(messages.getString("printTotalOrderAmount.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
