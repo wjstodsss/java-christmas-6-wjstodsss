@@ -19,6 +19,10 @@ public class MessageManager {
         System.out.println(messages.getString("menuAndQuantityPrompt.message"));
     }
 
+    public static void getPrintOrderMenu() {
+        System.out.println(messages.getString("printOrderMenu.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
