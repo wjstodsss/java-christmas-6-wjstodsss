@@ -6,12 +6,16 @@ import static christmas.view.InputValidator.validateDate;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-    public void readDate() {
-        int maxAttempts = 3;
-        int attempts = 0;
 
+    public void readDate() {
         getDatePromptMessage();
         String inputDate = Console.readLine();
+        readDateloop(inputDate);
+    }
+
+    private void readDateloop(String inputDate) {
+        int attempts = 0;
+        int maxAttempts = 3;
 
         while (attempts < maxAttempts) {
             try {
