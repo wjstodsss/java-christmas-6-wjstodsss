@@ -6,11 +6,10 @@ public class Application {
     public static void main(String[] args) {
         // TODO: 프로그램 구현
         OutputView outputView = new OutputView();
-        outputView.printOrderMenu();
-        outputView.printOrderMenuFormat("초코케이크", 3);
-        outputView.printTotalAmountAndFormat(10000);
-        outputView.printFreeAward();
-        outputView.printFreeAwardFormat("샴페인");
-        outputView.printNothing();
+        outputView.printDDayDiscount(10000);
+        outputView.printAwardEvent(25000);
+        outputView.printWeekdayDiscount(1000);
+        outputView.printWeekendDiscount(1500);
+        outputView.printSpecialDiscount(3000);
     }
 }

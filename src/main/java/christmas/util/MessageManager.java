@@ -31,6 +31,10 @@ public class MessageManager {
         System.out.println(messages.getString("printFreeAward.message"));
     }
 
+    public static void getPrintBenefitsDetails() {
+        System.out.println(messages.getString("printBenefitsDetails.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
