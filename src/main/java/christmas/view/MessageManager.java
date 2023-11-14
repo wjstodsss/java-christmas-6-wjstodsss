@@ -39,6 +39,14 @@ public class MessageManager {
         System.out.println(messages.getString("printTotalBenefitsAmount.message"));
     }
 
+    public static void getPrintExpectedDiscountedPaymentAmount() {
+        System.out.println(messages.getString("printExpectedDiscountedPaymentAmount.message"));
+    }
+
+    public static void getPrintDecemberBadgeAward() {
+        System.out.println(messages.getString("printDecemberBadgeAward.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");

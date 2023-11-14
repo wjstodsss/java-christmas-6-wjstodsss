@@ -47,4 +47,8 @@ public class OutputView {
         System.out.printf("-%,d원\n", totalAmount);
     }
 
+    public void printDecemberBadgeAward(String badge) {
+        System.out.printf("%s\n", badge);
+    }
+
 }
