@@ -27,6 +27,10 @@ public class MessageManager {
         System.out.println(messages.getString("printTotalOrderAmount.message"));
     }
 
+    public static void getPrintFreeAward() {
+        System.out.println(messages.getString("printFreeAward.message"));
+    }
+
     //Exception Messages
     public static String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");

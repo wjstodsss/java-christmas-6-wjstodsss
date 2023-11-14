@@ -9,5 +9,8 @@ public class Application {
         outputView.printOrderMenu();
         outputView.printOrderMenuFormat("초코케이크", 3);
         outputView.printTotalAmountAndFormat(10000);
+        outputView.printFreeAward();
+        outputView.printFreeAwardFormat("샴페인");
+        outputView.printNothing();
     }
 }

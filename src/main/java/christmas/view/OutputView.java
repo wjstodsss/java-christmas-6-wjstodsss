@@ -1,7 +1,6 @@
 package christmas.view;
 
-import static christmas.util.MessageManager.getPrintOrderMenu;
-import static christmas.util.MessageManager.getPrintTotalOrderAmount;
+import static christmas.util.MessageManager.*;
 
 public class OutputView {
     public void printBoundaryEmptyLine() {
@@ -22,6 +21,19 @@ public class OutputView {
         getPrintTotalOrderAmount();
 
         System.out.printf("%,d원\n", totalAmount);
+    }
+
+    public void printFreeAward() {
+        printBoundaryEmptyLine();
+        getPrintFreeAward();
+    }
+
+    public void printFreeAwardFormat(String item) {
+        System.out.println(item + " 1개");
+    }
+
+    public void printNothing() {
+        System.out.println("없음");
     }
 
 }
