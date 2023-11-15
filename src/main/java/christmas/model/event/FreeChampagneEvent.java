@@ -13,4 +13,11 @@ public class FreeChampagneEvent {
     public static boolean validateFreeChampagne(int input) {
         return input >= REWARD_THRESHOLD_AMOUNT;
     }
+
+    public static int freeChampagneDiscount(int totalAmount) {
+        if (validateFreeChampagne(totalAmount)) {
+            return freeChampanePrice();
+        }
+        return 0;
+    }
 }

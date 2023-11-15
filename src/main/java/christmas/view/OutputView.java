@@ -44,7 +44,9 @@ public class OutputView {
     public void printTotalDiscountAmountFormat(int totalAmount) {
         System.out.printf("-%,d원\n", totalAmount);
     }
-
+    public void printTotalDiscountAmountZeroFormat() {
+        System.out.printf("0원\n");
+    }
     public void printDecemberBadgeAward(String badge) {
         System.out.printf("%s\n", badge);
     }
