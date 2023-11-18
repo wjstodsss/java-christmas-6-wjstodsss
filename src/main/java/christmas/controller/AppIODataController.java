@@ -34,12 +34,9 @@ public class AppIODataController {
 
 
     public AppIODataController() {
-        //나중에 생각해 볼 문제 enumZ
-
-
         initialize();
 
-        outputView.getPrintBenefitsPreview(inputDate);
+        outputView.printBenefitsPreview(inputDate);
 
         printOrderMenu(inputOrder);
 
@@ -58,7 +55,7 @@ public class AppIODataController {
     }
 
     public void initialize() {
-        outputView.getPrintGreetingMessage();
+        outputView.printGreetingMessage();
         InputController inputController = new InputController();
         this.inputDate = inputController.getDateInput();
         this.inputOrder = inputController.getOrderInput();
@@ -66,27 +63,27 @@ public class AppIODataController {
 
     public void eventEntry(int totalAmount) {
         if (totalAmount < MIN_AMOUNT) {
-            outputView.getPrintBoundaryEmptyLine();
-            outputView.getPrintBenefitsDetails();
+            outputView.printBoundaryEmptyLine();
+            outputView.printBenefitsDetails();
             System.out.println(NOTHING);
         }
     }
 
     private void totalAmountView(int totalAmount) {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintTotalOrderAmount();
-        outputView.getPrintTotalAmountFormat(totalAmount);
+        outputView.printBoundaryEmptyLine();
+        outputView.printTotalOrderAmount();
+        outputView.printTotalAmountFormat(totalAmount);
     }
 
     private void freeAwardView(int totalAmount) {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintFreeAward();
-        outputView.getPrintFreeAwardFormat(freeChampagneEvent(totalAmount));
+        outputView.printBoundaryEmptyLine();
+        outputView.printFreeAward();
+        outputView.printFreeAwardFormat(freeChampagneEvent(totalAmount));
     }
 
     private void printOrderMenu(String inputOrder) {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintOrderMenu();
+        outputView.printBoundaryEmptyLine();
+        outputView.printOrderMenu();
 
         Iterator<String> itemsIterator = itemsSet(inputOrder).iterator();
         Iterator<Integer> quantitiesIterator = quantitiesList(inputOrder).iterator();
@@ -95,7 +92,7 @@ public class AppIODataController {
             String item = itemsIterator.next();
             int quantity = quantitiesIterator.next();
 
-            outputView.getPrintOrderMenuFormat(item, quantity);
+            outputView.printOrderMenuFormat(item, quantity);
         }
     }
 
@@ -113,8 +110,8 @@ public class AppIODataController {
 
     private void benefitsDetailsValue() {
         while (totalAmount >= MIN_AMOUNT) {
-            outputView.getPrintBoundaryEmptyLine();
-            outputView.getPrintBenefitsDetails();
+            outputView.printBoundaryEmptyLine();
+            outputView.printBenefitsDetails();
             dDayDiscount = dDayDiscount(inputDate);
             weekDiscount = menuDiscount(inputDate, inputOrder);
             specialDiscount = specialDiscount(inputDate);
@@ -133,39 +130,39 @@ public class AppIODataController {
 
     private void dDayDiscountDetailView(int dDayDiscount) {
         if (dDayDiscount != 0) {
-            outputView.getPrintDDayDiscount(dDayDiscount);
+            outputView.printDDayDiscount(dDayDiscount);
         }
     }
 
     private void weekendDiscountDetailView(int weekDiscount, String inputDate) {
         DayOfWeek dayOfWeek = getDayOfWeekFromDate(inputDate);
         if (weekDiscount != 0 && dayOfWeek.equals(DayOfWeek.FRIDAY) || dayOfWeek.equals(DayOfWeek.SATURDAY)) {
-            outputView.getPrintWeekendDiscount(weekDiscount);
+            outputView.printWeekendDiscount(weekDiscount);
         }
     }
 
     private void weekdayDiscountDetailView(int weekDiscount, String inputDate) {
         DayOfWeek dayOfWeek = getDayOfWeekFromDate(inputDate);
         if (weekDiscount != 0 && !dayOfWeek.equals(DayOfWeek.FRIDAY) && !dayOfWeek.equals(DayOfWeek.SATURDAY)) {
-            outputView.getPrintWeekdayDiscount(weekDiscount);
+            outputView.printWeekdayDiscount(weekDiscount);
         }
     }
 
     private void specialDiscountDetailView(int freeAward) {
         if (freeAward != 0) {
-            outputView.getPrintAwardEvent(freeAward);
+            outputView.printAwardEvent(freeAward);
         }
     }
 
     private void freeAwardDetailView(int specialDiscount) {
         if (specialDiscount != 0) {
-            outputView.getPrintSpecialDiscount(specialDiscount);
+            outputView.printSpecialDiscount(specialDiscount);
         }
     }
 
     private void totalDiscountAmountOutputView() {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintTotalBenefitsAmount();
+        outputView.printBoundaryEmptyLine();
+        outputView.printTotalBenefitsAmount();
         totalDiscountAmount();
         totalDiscountAmountZeroView();
         totalDiscountAmountView();
@@ -177,27 +174,27 @@ public class AppIODataController {
 
     private void totalDiscountAmountZeroView() {
         if (totalDiscountAmount == 0) {
-            outputView.getPrintTotalDiscountAmountZeroFormat();
+            outputView.printTotalDiscountAmountZeroFormat();
         }
     }
 
     private void totalDiscountAmountView() {
         if (totalDiscountAmount != 0) {
-            outputView.getPrintTotalDiscountAmountFormat(totalDiscountAmount);
+            outputView.printTotalDiscountAmountFormat(totalDiscountAmount);
         }
     }
 
     private void expectedDiscountedPaymentAmount() {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintExpectedDiscountedPaymentAmount();
-        outputView.getPrintTotalAmountFormat(totalAmount - totalDiscountAmount);
+        outputView.printBoundaryEmptyLine();
+        outputView.printExpectedDiscountedPaymentAmount();
+        outputView.printTotalAmountFormat(totalAmount - totalDiscountAmount);
     }
 
     private void decemberBadgeAward() {
-        outputView.getPrintBoundaryEmptyLine();
-        outputView.getPrintDecemberBadgeAward();
+        outputView.printBoundaryEmptyLine();
+        outputView.printDecemberBadgeAward();
         String badge = awardBadge(totalDiscountAmount);
-        outputView.getPrintDecemberBadgeAward(badge);
+        outputView.printDecemberBadgeAward(badge);
     }
 }
 

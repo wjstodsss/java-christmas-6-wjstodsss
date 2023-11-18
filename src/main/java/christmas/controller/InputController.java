@@ -34,7 +34,7 @@ public class InputController {
                 attempts++;
             }
             if (attempts == maxAttempts) {
-                outputView.getProgramCloseMessage();
+                outputView.printProgramCloseMessage();
                 break;
             }
         }

@@ -9,7 +9,7 @@ public class InputView {
     private InputValidator inputvalidator  = new InputValidator();
 
     public String readDate() {
-        outputView.getDatePromptMessage();
+        outputView.printDatePromptMessage();
         return readDateloop();
     }
 
@@ -32,7 +32,7 @@ public class InputView {
     }
 
     public String readMenuAndQuantity() {
-        outputView.getMenuAndQuantityPromptMessage();
+        outputView.printMenuAndQuantityPromptMessage();
         return readMenuAndQuantityLoop();
     }
 

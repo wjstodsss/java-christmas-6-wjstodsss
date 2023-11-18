@@ -34,13 +34,13 @@ public class OrderValidator {
         int additemsSetSize = itemsSet.size();
 
         if(beverageNames.size() >= additemsSetSize) {
-            throw new IllegalArgumentException(outputView.getNotOnlyBeveragesOrdered());
+            throw new IllegalArgumentException(outputView.printNotOnlyBeveragesOrdered());
         }
     }
 
     private void isExceededMaxOrderQuantity(String input){
         if (totalQuantities(input) > MAX_ORDER_NUMBER) {
-            throw new IllegalArgumentException(outputView.getExceededMaxOrderQuantity());
+            throw new IllegalArgumentException(outputView.printExceededMaxOrderQuantity());
         }
     }
 
@@ -48,7 +48,7 @@ public class OrderValidator {
         Set<String> itemsSet = itemsSet(input);
         for (String itemName : itemsSet) {
             if (!isContainsItem(itemName)) {
-                throw new IllegalArgumentException(outputView.getValidateContainsItem());
+                throw new IllegalArgumentException(outputView.printValidateContainsItem());
             }
         }
     }
@@ -56,7 +56,7 @@ public class OrderValidator {
     private void validateOrderQuantityMinimum(String input) {
         ArrayList<Integer> quantity = quantitiesList(input);
         if (isOrderQuantityMinimum(quantity)) {
-            throw new IllegalArgumentException(outputView.getValidateOrderQuantityMinimum());
+            throw new IllegalArgumentException(outputView.printValidateOrderQuantityMinimum());
         }
     }
 
@@ -64,7 +64,7 @@ public class OrderValidator {
         Set<String> itemsSet = itemsSet(input);
         ArrayList<Integer> quantity = quantitiesList(input);
         if (!isDuplicateMenu(itemsSet, quantity)) {
-            throw new IllegalArgumentException(outputView.getValidateDuplicateMenu());
+            throw new IllegalArgumentException(outputView.printValidateDuplicateMenu());
         }
     }
 

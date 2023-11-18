@@ -11,134 +11,134 @@ public class OutputView {
         this.exceptionMessages = ResourceBundle.getBundle("exception-messages");
     }
 
-    public void getPrintOrderMenuFormat(String item, int quantity) {
+    public void printOrderMenuFormat(String item, int quantity) {
         System.out.printf(messages.getString("printOrderMenuFormat.message"), item, quantity);
     }
 
-    public void getPrintTotalAmountFormat(int totalAmount) {
+    public void printTotalAmountFormat(int totalAmount) {
         System.out.printf(messages.getString("printTotalAmountFormat.message"), totalAmount);
     }
 
-    public void getPrintFreeAwardFormat(String item) {
+    public void printFreeAwardFormat(String item) {
         System.out.printf(messages.getString("printFreeAwardFormat.message"), item);
     }
 
-    public void getPrintBenefitsPreview(String input) {
+    public void printBenefitsPreview(String input) {
         System.out.printf(messages.getString("printBenefitsPreviewFormat.message"), input);
     }
 
-    public void getPrintDDayDiscount(int discountAmount) {
+    public void printDDayDiscount(int discountAmount) {
         System.out.printf(messages.getString("printDDayDiscountFormat.message"), discountAmount);
     }
 
-    public void getPrintWeekdayDiscount(int discountAmount) {
+    public void printWeekdayDiscount(int discountAmount) {
         System.out.printf(messages.getString("printWeekdayDiscountFormat.message"), discountAmount);
     }
 
-    public void getPrintWeekendDiscount(int discountAmount) {
+    public void printWeekendDiscount(int discountAmount) {
         System.out.printf(messages.getString("printWeekendDiscountFormat.message"), discountAmount);
     }
 
-    public void getPrintSpecialDiscount(int discountAmount) {
+    public void printSpecialDiscount(int discountAmount) {
         System.out.printf(messages.getString("printSpecialDiscountFormat.message"), discountAmount);
     }
 
-    public void getPrintAwardEvent(int itemPrice) {
+    public void printAwardEvent(int itemPrice) {
         System.out.printf(messages.getString("printAwardEventFormat.message"), itemPrice);
     }
 
-    public void getPrintTotalDiscountAmountFormat(int totalAmount) {
+    public void printTotalDiscountAmountFormat(int totalAmount) {
         System.out.printf(messages.getString("printTotalDiscountAmountFormat.message"), totalAmount);
     }
 
-    public void getPrintTotalDiscountAmountZeroFormat() {
+    public void printTotalDiscountAmountZeroFormat() {
         System.out.printf(messages.getString("printTotalDiscountAmountZeroFormat.message"));
     }
 
-    public void getPrintDecemberBadgeAward(String badge) {
+    public void printDecemberBadgeAward(String badge) {
         System.out.printf(messages.getString("printDecemberBadgeAwardFormat.message"), badge);
     }
 
     //General Messages
-    public void getPrintBoundaryEmptyLine() {
+    public void printBoundaryEmptyLine() {
         System.out.println(messages.getString("printBoundaryEmptyLine.message"));
     }
 
-    public void getPrintGreetingMessage() {
+    public void printGreetingMessage() {
         System.out.println(messages.getString("printGreetingMessage.message"));
     }
 
-    public void getDatePromptMessage() {
+    public void printDatePromptMessage() {
         System.out.println(messages.getString("datePrompt.message"));
     }
 
-    public void getMenuAndQuantityPromptMessage() {
+    public void printMenuAndQuantityPromptMessage() {
         System.out.println(messages.getString("menuAndQuantityPrompt.message"));
     }
 
-    public void getPrintOrderMenu() {
+    public void printOrderMenu() {
         System.out.println(messages.getString("printOrderMenu.message"));
     }
 
-    public void getPrintTotalOrderAmount() {
+    public void printTotalOrderAmount() {
         System.out.println(messages.getString("printTotalOrderAmount.message"));
     }
 
-    public void getPrintFreeAward() {
+    public void printFreeAward() {
         System.out.println(messages.getString("printFreeAward.message"));
     }
 
-    public void getPrintBenefitsDetails() {
+    public void printBenefitsDetails() {
         System.out.println(messages.getString("printBenefitsDetails.message"));
     }
 
-    public void getPrintTotalBenefitsAmount() {
+    public void printTotalBenefitsAmount() {
         System.out.println(messages.getString("printTotalBenefitsAmount.message"));
     }
 
-    public void getPrintExpectedDiscountedPaymentAmount() {
+    public void printExpectedDiscountedPaymentAmount() {
         System.out.println(messages.getString("printExpectedDiscountedPaymentAmount.message"));
     }
 
-    public void getPrintDecemberBadgeAward() {
+    public void printDecemberBadgeAward() {
         System.out.println(messages.getString("printDecemberBadgeAward.message"));
     }
 
     //Exception Messages
-    public String getProgramCloseMessage() {
+    public String printProgramCloseMessage() {
         return exceptionMessages.getString("programClose.message");
     }
 
-    public String getValidateNonIntegerMessage() {
+    public String printValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
     }
 
-    public String getValidateInputRange() {
+    public String printValidateInputRange() {
         return exceptionMessages.getString("validateInputRange.message");
     }
 
-    public String getValidateInputMenuAndQuantity() {
+    public String printValidateInputMenuAndQuantity() {
         return exceptionMessages.getString("validateInputMenuAndQuantity.message");
     }
 
-    public String getValidateContainsItem() {
+    public String printValidateContainsItem() {
         return exceptionMessages.getString("validateContainsItem.message");
     }
 
-    public String getValidateOrderQuantityMinimum() {
+    public String printValidateOrderQuantityMinimum() {
         return exceptionMessages.getString("validateOrderQuantityMinimum.message");
     }
 
-    public String getValidateDuplicateMenu() {
+    public String printValidateDuplicateMenu() {
         return exceptionMessages.getString("validateDuplicateMenu.message");
     }
 
 
-    public String getNotOnlyBeveragesOrdered() {
+    public String printNotOnlyBeveragesOrdered() {
         return exceptionMessages.getString("notOnlyBeveragesOrdered.message");
     }
 
-    public String getExceededMaxOrderQuantity() {
+    public String printExceededMaxOrderQuantity() {
         return exceptionMessages.getString("exceededMaxOrderQuantity.message");
     }
 

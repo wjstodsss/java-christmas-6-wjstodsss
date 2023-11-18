@@ -19,20 +19,20 @@ public class InputValidator {
         try {
             Integer.parseInt(input);
         } catch (NumberFormatException e) {
-            throw new IllegalArgumentException(outputView.getValidateNonIntegerMessage());
+            throw new IllegalArgumentException(outputView.printValidateNonIntegerMessage());
         }
     }
 
     public void validateInputRange(String input) {
         int number = Integer.parseInt(input);
         if (number < MIN_VALUE || number > MAX_VALUE) {
-            throw new IllegalArgumentException(outputView.getValidateInputRange());
+            throw new IllegalArgumentException(outputView.printValidateInputRange());
         }
     }
 
     public void validateInputMenuAndQuantity(String input) {
         if (!isInputMenuAndQuantityFormat(input)) {
-            throw new IllegalArgumentException(outputView.getValidateInputMenuAndQuantity());
+            throw new IllegalArgumentException(outputView.printValidateInputMenuAndQuantity());
         }
     }
     public boolean isInputMenuAndQuantityFormat(String input) {
