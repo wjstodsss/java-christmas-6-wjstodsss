@@ -2,19 +2,16 @@ package christmas.model.counter;
 
 import christmas.model.menu.Beverage;
 
+import christmas.view.OutputView;
 import java.util.ArrayList;
 import java.util.Set;
 
 import static christmas.model.counter.PointOfSale.*;
 import static christmas.model.menu.MenuPriceMap.menuPrices;
-import static christmas.view.OutputView.getExceededMaxOrderQuantity;
-import static christmas.view.OutputView.getNotOnlyBeveragesOrdered;
-import static christmas.view.OutputView.getValidateContainsItem;
-import static christmas.view.OutputView.getValidateDuplicateMenu;
-import static christmas.view.OutputView.getValidateOrderQuantityMinimum;
 
 public class OrderValidator {
     private final int MAX_ORDER_NUMBER = 20;
+    private OutputView outputView = new OutputView();
 
     public void orderValidatorBundle(String input) {
         isNotOnlyBeveragesOrdered(input);
@@ -37,13 +34,13 @@ public class OrderValidator {
         int additemsSetSize = itemsSet.size();
 
         if(beverageNames.size() >= additemsSetSize) {
-            throw new IllegalArgumentException(getNotOnlyBeveragesOrdered());
+            throw new IllegalArgumentException(outputView.getNotOnlyBeveragesOrdered());
         }
     }
 
     private void isExceededMaxOrderQuantity(String input){
         if (totalQuantities(input) > MAX_ORDER_NUMBER) {
-            throw new IllegalArgumentException(getExceededMaxOrderQuantity());
+            throw new IllegalArgumentException(outputView.getExceededMaxOrderQuantity());
         }
     }
 
@@ -51,7 +48,7 @@ public class OrderValidator {
         Set<String> itemsSet = itemsSet(input);
         for (String itemName : itemsSet) {
             if (!isContainsItem(itemName)) {
-                throw new IllegalArgumentException(getValidateContainsItem());
+                throw new IllegalArgumentException(outputView.getValidateContainsItem());
             }
         }
     }
@@ -59,7 +56,7 @@ public class OrderValidator {
     private void validateOrderQuantityMinimum(String input) {
         ArrayList<Integer> quantity = quantitiesList(input);
         if (isOrderQuantityMinimum(quantity)) {
-            throw new IllegalArgumentException(getValidateOrderQuantityMinimum());
+            throw new IllegalArgumentException(outputView.getValidateOrderQuantityMinimum());
         }
     }
 
@@ -67,7 +64,7 @@ public class OrderValidator {
         Set<String> itemsSet = itemsSet(input);
         ArrayList<Integer> quantity = quantitiesList(input);
         if (!isDuplicateMenu(itemsSet, quantity)) {
-            throw new IllegalArgumentException(getValidateDuplicateMenu());
+            throw new IllegalArgumentException(outputView.getValidateDuplicateMenu());
         }
     }
 

@@ -1,6 +1,7 @@
 package christmas;
 
 import christmas.controller.AppIODataController;
+import christmas.view.InputView;
 import christmas.view.OutputView;
 
 public class Application {

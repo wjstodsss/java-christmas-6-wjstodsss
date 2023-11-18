@@ -136,7 +136,7 @@
 # 프리코스 종료 후
     - [x] docs : 리팩토링 할 목록을 작성한다.
     - [x] refactor : 누락된 인사말을 추가 시킨다.
-    - [ ] refactor : MessageManager를 OutputView에 통합한다.
+    - [x] refactor : MessageManager를 OutputView에 통합한다.
     - [ ] refactor : AppIODataController에서 입력부분을 분리한다.
     - [ ] refactor : AppIODataController에서 출력부분을 분리한다.
     - [ ] refactor : AppIODataController에서 주문부분을 분리한다.

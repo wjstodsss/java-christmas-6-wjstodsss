@@ -19,14 +19,6 @@ import static christmas.model.event.MenuDiscountEvent.menuDiscount;
 import static christmas.model.event.SpecialStarEvent.specialDiscount;
 
 import static christmas.util.Date.getDayOfWeekFromDate;
-import static christmas.view.OutputView.getPrintBenefitsDetails;
-import static christmas.view.OutputView.getPrintDecemberBadgeAward;
-import static christmas.view.OutputView.getPrintExpectedDiscountedPaymentAmount;
-import static christmas.view.OutputView.getPrintFreeAward;
-import static christmas.view.OutputView.getPrintOrderMenu;
-import static christmas.view.OutputView.getPrintTotalBenefitsAmount;
-import static christmas.view.OutputView.getPrintTotalOrderAmount;
-
 
 public class AppIODataController {
     private String inputDate;
@@ -69,20 +61,20 @@ public class AppIODataController {
     public void eventEntry(int totalAmount) {
         if (totalAmount < MIN_AMOUNT) {
             outputView.getPrintBoundaryEmptyLine();
-            getPrintBenefitsDetails();
+            outputView.getPrintBenefitsDetails();
             System.out.println(NOTHING);
         }
     }
 
     private void totalAmountView(int totalAmount) {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintTotalOrderAmount();
+        outputView.getPrintTotalOrderAmount();
         outputView.getPrintTotalAmountFormat(totalAmount);
     }
 
     private void freeAwardView(int totalAmount) {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintFreeAward();
+        outputView.getPrintFreeAward();
         outputView.getPrintFreeAwardFormat(freeChampagneEvent(totalAmount));
     }
 
@@ -107,7 +99,7 @@ public class AppIODataController {
 
     private void printOrderMenu(String inputOrder) {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintOrderMenu();
+        outputView.getPrintOrderMenu();
 
         Iterator<String> itemsIterator = itemsSet(inputOrder).iterator();
         Iterator<Integer> quantitiesIterator = quantitiesList(inputOrder).iterator();
@@ -135,7 +127,7 @@ public class AppIODataController {
     private void benefitsDetailsValue() {
         while (totalAmount >= MIN_AMOUNT) {
             outputView.getPrintBoundaryEmptyLine();
-            getPrintBenefitsDetails();
+            outputView.getPrintBenefitsDetails();
             dDayDiscount = dDayDiscount(inputDate);
             weekDiscount = menuDiscount(inputDate, inputOrder);
             specialDiscount = specialDiscount(inputDate);
@@ -186,7 +178,7 @@ public class AppIODataController {
 
     private void totalDiscountAmountOutputView() {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintTotalBenefitsAmount();
+        outputView.getPrintTotalBenefitsAmount();
         totalDiscountAmount();
         totalDiscountAmountZeroView();
         totalDiscountAmountView();
@@ -210,13 +202,13 @@ public class AppIODataController {
 
     private void expectedDiscountedPaymentAmount() {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintExpectedDiscountedPaymentAmount();
+        outputView.getPrintExpectedDiscountedPaymentAmount();
         outputView.getPrintTotalAmountFormat(totalAmount - totalDiscountAmount);
     }
 
     private void decemberBadgeAward() {
         outputView.getPrintBoundaryEmptyLine();
-        getPrintDecemberBadgeAward();
+        outputView.getPrintDecemberBadgeAward();
         String badge = awardBadge(totalDiscountAmount);
         outputView.getPrintDecemberBadgeAward(badge);
     }

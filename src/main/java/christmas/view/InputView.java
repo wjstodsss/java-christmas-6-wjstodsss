@@ -1,16 +1,15 @@
 package christmas.view;
 
 
-import static christmas.view.InputValidator.*;
-import static christmas.view.OutputView.getDatePromptMessage;
-import static christmas.view.OutputView.getMenuAndQuantityPromptMessage;
 
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
+    private OutputView outputView = new OutputView();
+    private InputValidator inputvalidator  = new InputValidator();
 
     public String readDate() {
-        getDatePromptMessage();
+        outputView.getDatePromptMessage();
         return readDateloop();
     }
 
@@ -21,7 +20,7 @@ public class InputView {
 
         while (attempts < maxAttempts) {
             try {
-                validateDate(inputDate);
+                inputvalidator.validateDate(inputDate);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
@@ -33,7 +32,7 @@ public class InputView {
     }
 
     public String readMenuAndQuantity() {
-        getMenuAndQuantityPromptMessage();
+        outputView.getMenuAndQuantityPromptMessage();
         return readMenuAndQuantityLoop();
     }
 
@@ -44,7 +43,7 @@ public class InputView {
 
         while (attempts < maxAttempts) {
             try {
-                validateInputMenuAndQuantity(inputMenuAndQuantity);
+                inputvalidator.validateInputMenuAndQuantity(inputMenuAndQuantity);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
