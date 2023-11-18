@@ -3,7 +3,9 @@ package christmas.view;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static christmas.view.MessageManager.*;
+import static christmas.view.OutputView.getValidateInputMenuAndQuantity;
+import static christmas.view.OutputView.getValidateInputRange;
+import static christmas.view.OutputView.getValidateNonIntegerMessage;
 
 public class InputValidator {
 

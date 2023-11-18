@@ -1,18 +1,17 @@
 package christmas.model.counter;
 
-import christmas.model.menu.Appetizer;
 import christmas.model.menu.Beverage;
-import christmas.model.menu.Dessert;
-import christmas.model.menu.MainDish;
-import christmas.util.Calculator;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Set;
 
 import static christmas.model.counter.PointOfSale.*;
 import static christmas.model.menu.MenuPriceMap.menuPrices;
-import static christmas.view.MessageManager.*;
+import static christmas.view.OutputView.getExceededMaxOrderQuantity;
+import static christmas.view.OutputView.getNotOnlyBeveragesOrdered;
+import static christmas.view.OutputView.getValidateContainsItem;
+import static christmas.view.OutputView.getValidateDuplicateMenu;
+import static christmas.view.OutputView.getValidateOrderQuantityMinimum;
 
 public class OrderValidator {
     private final int MAX_ORDER_NUMBER = 20;
