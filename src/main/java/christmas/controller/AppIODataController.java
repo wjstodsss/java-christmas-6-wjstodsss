@@ -37,6 +37,7 @@ public class AppIODataController {
 
 
     public AppIODataController() {
+        outputView.printGreetingMessage();
         this.inputDate = inputView.readDate();
         this.inputOrder = inputView.readMenuAndQuantity();
         inputOrder = validateInputOrderLoop(inputOrder);
