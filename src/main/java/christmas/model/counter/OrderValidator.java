@@ -11,7 +11,7 @@ import static christmas.model.menu.MenuPriceMap.menuPrices;
 
 public class OrderValidator {
     private final int MAX_ORDER_NUMBER = 20;
-    private OutputView outputView = new OutputView();
+    private final OutputView outputView = new OutputView();
 
     public void orderValidatorBundle(String input) {
         isNotOnlyBeveragesOrdered(input);

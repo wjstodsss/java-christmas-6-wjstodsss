@@ -8,7 +8,7 @@ public class InputValidator {
     private static final int MIN_VALUE = 1;
     private static final int MAX_VALUE = 31;
 
-    private OutputView outputView = new OutputView();
+    private final OutputView outputView = new OutputView();
 
     public void validateDate(String inputDate) {
         validateNonInteger(inputDate);

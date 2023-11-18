@@ -5,7 +5,7 @@ package christmas.view;
 import camp.nextstep.edu.missionutils.Console;
 
 public class InputView {
-    private OutputView outputView = new OutputView();
+    private final OutputView outputView = new OutputView();
     private InputValidator inputvalidator  = new InputValidator();
 
     public String readDate() {

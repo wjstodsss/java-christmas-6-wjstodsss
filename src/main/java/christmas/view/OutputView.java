@@ -72,10 +72,6 @@ public class OutputView {
         System.out.println(messages.getString("datePrompt.message"));
     }
 
-    public void getProgramClosePromptMessage() {
-        System.out.println(messages.getString("programClosePrompt.message"));
-    }
-
     public void getMenuAndQuantityPromptMessage() {
         System.out.println(messages.getString("menuAndQuantityPrompt.message"));
     }
@@ -109,6 +105,10 @@ public class OutputView {
     }
 
     //Exception Messages
+    public String getProgramCloseMessage() {
+        return exceptionMessages.getString("programClose.message");
+    }
+
     public String getValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
     }

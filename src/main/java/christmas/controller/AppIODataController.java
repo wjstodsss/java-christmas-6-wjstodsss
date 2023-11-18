@@ -24,7 +24,7 @@ public class AppIODataController {
     private String inputDate;
     private String inputOrder;
     private InputView inputView = new InputView();
-    private OutputView outputView = new OutputView();
+    private final OutputView outputView = new OutputView();
     private OrderValidator orderValidator = new OrderValidator();
     private PointOfSale pointOfSale = new PointOfSale();
     private int totalAmount = 0;
@@ -34,10 +34,10 @@ public class AppIODataController {
 
 
     public AppIODataController() {
-        outputView.getPrintGreetingMessage();
-        this.inputDate = inputView.readDate();
-        this.inputOrder = inputView.readMenuAndQuantity();
-        inputOrder = validateInputOrderLoop(inputOrder);
+        //나중에 생각해 볼 문제 enumZ
+
+
+        initialize();
 
         outputView.getPrintBenefitsPreview(inputDate);
 
@@ -52,10 +52,16 @@ public class AppIODataController {
         benefitsDetailsValue();
         benefitsDetailView();
 
-
         totalDiscountAmountOutputView();
         expectedDiscountedPaymentAmount();
         decemberBadgeAward();
+    }
+
+    public void initialize() {
+        outputView.getPrintGreetingMessage();
+        InputController inputController = new InputController();
+        this.inputDate = inputController.getDateInput();
+        this.inputOrder = inputController.getOrderInput();
     }
 
     public void eventEntry(int totalAmount) {
@@ -77,25 +83,6 @@ public class AppIODataController {
         outputView.getPrintFreeAward();
         outputView.getPrintFreeAwardFormat(freeChampagneEvent(totalAmount));
     }
-
-    private String validateInputOrderLoop(String inputOrder) {
-
-        int attempts = 0;
-        int maxAttempts = 3;
-
-        while (attempts < maxAttempts) {
-            try {
-                orderValidator.orderValidatorBundle(inputOrder);
-                break;
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-                inputOrder = Console.readLine();
-                attempts++;
-            }
-        }
-        return inputOrder;
-    }
-
 
     private void printOrderMenu(String inputOrder) {
         outputView.getPrintBoundaryEmptyLine();
