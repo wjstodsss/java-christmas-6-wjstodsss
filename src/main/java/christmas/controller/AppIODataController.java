@@ -1,31 +1,19 @@
 package christmas.controller;
 
-import camp.nextstep.edu.missionutils.Console;
-import christmas.model.counter.OrderValidator;
 import christmas.model.counter.PointOfSale;
-import christmas.view.InputView;
 import christmas.view.OutputView;
-
-
 import java.time.DayOfWeek;
-import java.util.Iterator;
-
-import static christmas.model.counter.PointOfSale.itemsSet;
-import static christmas.model.counter.PointOfSale.quantitiesList;
 import static christmas.model.event.BadgeAwardEvent.awardBadge;
 import static christmas.model.event.ChristmasDDay.dDayDiscount;
 import static christmas.model.event.FreeChampagneEvent.*;
 import static christmas.model.event.MenuDiscountEvent.menuDiscount;
 import static christmas.model.event.SpecialStarEvent.specialDiscount;
-
 import static christmas.util.Date.getDayOfWeekFromDate;
 
 public class AppIODataController {
     private String inputDate;
     private String inputOrder;
-    private InputView inputView = new InputView();
     private final OutputView outputView = new OutputView();
-    private OrderValidator orderValidator = new OrderValidator();
     private PointOfSale pointOfSale = new PointOfSale();
     private int totalAmount = 0;
     private int totalDiscountAmount = 0;
@@ -34,14 +22,9 @@ public class AppIODataController {
 
 
     public AppIODataController() {
-        initialize();
+        visitInformationController();
 
-        outputView.printBenefitsPreview(inputDate);
-
-        printOrderMenu(inputOrder);
-
-        totalAmount = pointOfSale.calculateTotalOrderAmount(inputOrder);
-        totalAmountView(totalAmount);
+        orderInformationController(inputOrder);
 
         freeAwardView(totalAmount);
 
@@ -54,11 +37,15 @@ public class AppIODataController {
         decemberBadgeAward();
     }
 
-    public void initialize() {
-        outputView.printGreetingMessage();
-        InputController inputController = new InputController();
-        this.inputDate = inputController.getDateInput();
-        this.inputOrder = inputController.getOrderInput();
+    public void visitInformationController() {
+        VisitInformationController visitInformationController = new VisitInformationController();
+        this.inputDate = visitInformationController.getDateInput();
+        this.inputOrder = visitInformationController.getOrderInput();
+    }
+
+    public void orderInformationController(String inputOrder) {
+        OrderInformationController orderInformationController = new OrderInformationController(inputOrder);
+        this.totalAmount=orderInformationController.calculateTotalAmount();
     }
 
     public void eventEntry(int totalAmount) {
@@ -69,11 +56,7 @@ public class AppIODataController {
         }
     }
 
-    private void totalAmountView(int totalAmount) {
-        outputView.printBoundaryEmptyLine();
-        outputView.printTotalOrderAmount();
-        outputView.printTotalAmountFormat(totalAmount);
-    }
+
 
     private void freeAwardView(int totalAmount) {
         outputView.printBoundaryEmptyLine();
@@ -81,20 +64,6 @@ public class AppIODataController {
         outputView.printFreeAwardFormat(freeChampagneEvent(totalAmount));
     }
 
-    private void printOrderMenu(String inputOrder) {
-        outputView.printBoundaryEmptyLine();
-        outputView.printOrderMenu();
-
-        Iterator<String> itemsIterator = itemsSet(inputOrder).iterator();
-        Iterator<Integer> quantitiesIterator = quantitiesList(inputOrder).iterator();
-
-        while (itemsIterator.hasNext() && quantitiesIterator.hasNext()) {
-            String item = itemsIterator.next();
-            int quantity = quantitiesIterator.next();
-
-            outputView.printOrderMenuFormat(item, quantity);
-        }
-    }
 
     private String freeChampagneEvent(int totalAmount) {
         if (validateFreeChampagne(totalAmount)) {

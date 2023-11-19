@@ -5,7 +5,7 @@ import christmas.model.counter.OrderValidator;
 import christmas.view.InputView;
 import christmas.view.OutputView;
 
-public class InputController {
+public class VisitInformationController {
     private String inputDate;
     private String inputOrder;
 
@@ -13,10 +13,12 @@ public class InputController {
     private OrderValidator orderValidator = new OrderValidator();
     private OutputView outputView = new OutputView();
 
-    public InputController() {
+    public VisitInformationController() {
+        outputView.printGreetingMessage();
         this.inputDate = inputView.readDate();
         this.inputOrder = inputView.readMenuAndQuantity();
         inputOrder = validateInputOrderLoop(inputOrder);
+        outputView.printBenefitsPreview(inputDate);
     }
 
     private String validateInputOrderLoop(String inputOrder) {
