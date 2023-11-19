@@ -140,7 +140,7 @@
     - [x] refactor : AppIODataController에서 예약 정보 부분을 분리한다.
         - [x] refactor : get은 반환값을 의미한다고 해서 OutputView클래스 내의 메서드명의 서술어를 print로 변경함
     - [x] refactor : AppIODataController에서 주문 정보 부분을 분리한다.
-    - [ ] refactor : AppIODataController에서 할인이벤트 부분을 분리한다.
+    - [x] refactor : AppIODataController에서 할인이벤트 부분을 분리한다.
     - [ ] refactor : AppIODataController에서 결제 및 배지 리워드 부분을 분리한다.
     
     
