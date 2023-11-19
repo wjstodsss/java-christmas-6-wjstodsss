@@ -11,7 +11,7 @@ import static christmas.util.Date.getDayOfWeekFromDate;
 import christmas.view.OutputView;
 import java.time.DayOfWeek;
 
-public class DiscountController {
+public class DiscountInformationController {
     private final int MIN_AMOUNT = 10000;
     private final String NOTHING = "없음";
     private final String inputDate;
@@ -24,7 +24,7 @@ public class DiscountController {
     private int totalDiscountAmount = 0;
     private final OutputView outputView = new OutputView();
 
-    public DiscountController(int totalAmount, String inputDate, String inputOrder) {
+    public DiscountInformationController(int totalAmount, String inputDate, String inputOrder) {
         this.inputDate = inputDate;
         this.inputOrder = inputOrder;
         this.totalAmount = totalAmount;
