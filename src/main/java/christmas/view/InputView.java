@@ -16,17 +16,22 @@ public class InputView {
     private String readDateloop() {
         int attempts = 0;
         int maxAttempts = 3;
-        String inputDate = Console.readLine();
+        String inputDate = null;
 
         while (attempts < maxAttempts) {
             try {
+                inputDate = Console.readLine();
                 inputvalidator.validateDate(inputDate);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
-                inputDate = Console.readLine();
                 attempts++;
             }
+        }
+        if (attempts == maxAttempts) {
+            String errorMessage = outputView.printMaxAttemptsOverMessage();
+            System.out.println(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
         return  inputDate;
     }
@@ -39,17 +44,22 @@ public class InputView {
     private String readMenuAndQuantityLoop() {
         int attempts = 0;
         int maxAttempts = 3;
-        String inputMenuAndQuantity = Console.readLine();
+        String inputMenuAndQuantity = null;
 
         while (attempts < maxAttempts) {
             try {
+                inputMenuAndQuantity = Console.readLine();
                 inputvalidator.validateInputMenuAndQuantity(inputMenuAndQuantity);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
-                inputMenuAndQuantity = Console.readLine();
                 attempts++;
             }
+        }
+        if (attempts == maxAttempts) {
+            String errorMessage = outputView.printMaxAttemptsOverMessage();
+            System.out.println(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
         }
         return inputMenuAndQuantity;
     }

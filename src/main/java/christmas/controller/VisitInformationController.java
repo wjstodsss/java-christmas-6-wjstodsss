@@ -17,30 +17,40 @@ public class VisitInformationController {
         outputView.printGreetingMessage();
         this.inputDate = inputView.readDate();
         this.inputOrder = inputView.readMenuAndQuantity();
-        inputOrder = validateInputOrderLoop(inputOrder);
+        validateInputOrder(inputOrder);
         outputView.printBenefitsPreview(inputDate);
     }
 
-    private String validateInputOrderLoop(String inputOrder) {
+    private void validateInputOrder(String inputOrder) {
+            try {
+                orderValidator.orderValidatorBundle(inputOrder);
+                this.inputOrder = inputOrder;
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                validateInputOrderLoop(inputOrder);
+            }
+    }
 
+    private void validateInputOrderLoop(String inputOrder) {
         int attempts = 0;
-        int maxAttempts = 3;
+        int maxAttempts = 2;
 
         while (attempts < maxAttempts) {
             try {
+                inputOrder = Console.readLine();
                 orderValidator.orderValidatorBundle(inputOrder);
                 break;
             } catch (IllegalArgumentException e) {
                 System.out.println(e.getMessage());
-                inputOrder = Console.readLine();
                 attempts++;
             }
-            if (attempts == maxAttempts) {
-                outputView.printProgramCloseMessage();
-                break;
-            }
         }
-        return inputOrder;
+        if (attempts == maxAttempts) {
+            String errorMessage = outputView.printMaxAttemptsOverMessage();
+            System.out.println(errorMessage);
+            throw new IllegalArgumentException(errorMessage);
+        }
+        this.inputOrder = inputOrder;
     }
 
     public String getDateInput() {

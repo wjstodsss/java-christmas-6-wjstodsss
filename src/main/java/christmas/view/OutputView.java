@@ -109,6 +109,10 @@ public class OutputView {
         return exceptionMessages.getString("programClose.message");
     }
 
+    public String printMaxAttemptsOverMessage() {
+        return exceptionMessages.getString("maxAttemptsOver.message");
+    }
+
     public String printValidateNonIntegerMessage() {
         return exceptionMessages.getString("validateNonInteger.message");
     }
