@@ -142,5 +142,9 @@
     - [x] refactor : AppIODataController에서 주문 정보 부분을 분리한다.
     - [x] refactor : AppIODataController에서 할인이벤트 부분을 분리한다.
     - [x] refactor : AppIODataController에서 결제 및 배지 리워드 부분을 분리한다.
+
+# 해야지 는다.
+    - [ ] feat : 이벤트 내용을 담을 리스트 객체를 만든다.
+    - [ ] refactor : 기본 메세지들을 분리하여 리스트 객체에 담는다.
     
     
